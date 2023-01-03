@@ -224,4 +224,28 @@ public class Livre {
     public void setContributeurs(String contributeurs) {
         this.contributeurs = contributeurs;
     }
+
+
+    @Override
+    public String toString() {
+        return "Livre{" +
+                "id=" + id +
+                ", ISBN='" + ISBN + '\'' +
+                ", format='" + format + '\'' +
+                ", image='" + image + '\'' +
+                ", titre='" + titre + '\'' +
+                ", sousTitre='" + sousTitre + '\'' +
+                ", description='" + description + '\'' +
+                ", langue='" + langue + '\'' +
+                ", quantite='" + quantite + '\'' +
+                ", dateMisEnVente=" + dateMisEnVente +
+                ", datePublication=" + datePublication +
+                ", editeur='" + editeur + '\'' +
+                ", nombreDePage=" + nombreDePage +
+                ", nomDeLaSerie='" + nomDeLaSerie + '\'' +
+                ", autorisationParentale=" + autorisationParentale +
+                ", genre='" + genre + '\'' +
+                ", contributeurs='" + contributeurs + '\'' +
+                '}';
+    }
 }

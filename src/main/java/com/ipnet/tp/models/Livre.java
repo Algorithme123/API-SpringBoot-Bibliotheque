@@ -64,4 +64,164 @@ public class Livre {
     public Livre() {
     }
 
+    public Livre(Long id, String ISBN, String format, String image,
+                 String titre, String sousTitre, String description,
+                 String langue, String quantite, Date dateMisEnVente,
+                 Date datePublication, String editeur, Integer nombreDePage,
+                 String nomDeLaSerie, Boolean autorisationParentale, String genre,
+                 String contributeurs) {
+        this.id = id;
+        this.ISBN = ISBN;
+        this.format = format;
+        this.image = image;
+        this.titre = titre;
+        this.sousTitre = sousTitre;
+        this.description = description;
+        this.langue = langue;
+        this.quantite = quantite;
+        this.dateMisEnVente = dateMisEnVente;
+        this.datePublication = datePublication;
+        this.editeur = editeur;
+        this.nombreDePage = nombreDePage;
+        this.nomDeLaSerie = nomDeLaSerie;
+        this.autorisationParentale = autorisationParentale;
+        this.genre = genre;
+        this.contributeurs = contributeurs;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getSousTitre() {
+        return sousTitre;
+    }
+
+    public void setSousTitre(String sousTitre) {
+        this.sousTitre = sousTitre;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLangue() {
+        return langue;
+    }
+
+    public void setLangue(String langue) {
+        this.langue = langue;
+    }
+
+    public String getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(String quantite) {
+        this.quantite = quantite;
+    }
+
+    public Date getDateMisEnVente() {
+        return dateMisEnVente;
+    }
+
+    public void setDateMisEnVente(Date dateMisEnVente) {
+        this.dateMisEnVente = dateMisEnVente;
+    }
+
+    public Date getDatePublication() {
+        return datePublication;
+    }
+
+    public void setDatePublication(Date datePublication) {
+        this.datePublication = datePublication;
+    }
+
+    public String getEditeur() {
+        return editeur;
+    }
+
+    public void setEditeur(String editeur) {
+        this.editeur = editeur;
+    }
+
+    public Integer getNombreDePage() {
+        return nombreDePage;
+    }
+
+    public void setNombreDePage(Integer nombreDePage) {
+        this.nombreDePage = nombreDePage;
+    }
+
+    public String getNomDeLaSerie() {
+        return nomDeLaSerie;
+    }
+
+    public void setNomDeLaSerie(String nomDeLaSerie) {
+        this.nomDeLaSerie = nomDeLaSerie;
+    }
+
+    public Boolean getAutorisationParentale() {
+        return autorisationParentale;
+    }
+
+    public void setAutorisationParentale(Boolean autorisationParentale) {
+        this.autorisationParentale = autorisationParentale;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getContributeurs() {
+        return contributeurs;
+    }
+
+    public void setContributeurs(String contributeurs) {
+        this.contributeurs = contributeurs;
+    }
 }

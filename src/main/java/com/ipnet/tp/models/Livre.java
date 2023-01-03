@@ -6,14 +6,14 @@ import java.util.Date;
 
 @Entity
 @Table(name="Livre")
-public class Livre {
+public class Livre<L> {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name="isbn", nullable = false, unique = true)
-    private String ISBN;
+    private String isbn;
 
     @Column(name="format", nullable = false, unique = false)
     private String format;
@@ -64,14 +64,14 @@ public class Livre {
     public Livre() {
     }
 
-    public Livre(Long id, String ISBN, String format, String image,
+    public Livre(Long id, String isbn, String format, String image,
                  String titre, String sousTitre, String description,
                  String langue, String quantite, Date dateMisEnVente,
                  Date datePublication, String editeur, Integer nombreDePage,
                  String nomDeLaSerie, Boolean autorisationParentale, String genre,
                  String contributeurs) {
         this.id = id;
-        this.ISBN = ISBN;
+        this.isbn = isbn;
         this.format = format;
         this.image = image;
         this.titre = titre;
@@ -97,12 +97,12 @@ public class Livre {
         this.id = id;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setIsbn(String ISBN) {
+        this.isbn = isbn;
     }
 
     public String getFormat() {
@@ -230,7 +230,7 @@ public class Livre {
     public String toString() {
         return "Livre{" +
                 "id=" + id +
-                ", ISBN='" + ISBN + '\'' +
+                ", ISBN='" + isbn + '\'' +
                 ", format='" + format + '\'' +
                 ", image='" + image + '\'' +
                 ", titre='" + titre + '\'' +

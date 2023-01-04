@@ -5,6 +5,7 @@ import com.ipnet.tp.repositories.LivreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -43,12 +44,13 @@ public class LivreServiceImpl implements LivreService {
 
     // Affichage de tous les livres
     @Override
-    public Livre<Livre> getAllLivres(){
-        return (Livre<Livre>) livreRepository.findAll();
+    public List<Livre> getAllLivres(){
+
+        return livreRepository.findAll();
     }
 
+
     //Recherche d'une occurence par la cle primaire
-    @Override
     public Optional<Livre> findParId(Long id){
         return Optional.ofNullable(livreRepository.findById(id).orElse(null));
     }
@@ -56,8 +58,8 @@ public class LivreServiceImpl implements LivreService {
 
     //Recherche d'une occurrence au moins par un autre attribut de l'entité ;
     @Override
-    public  Livre findParTitreOuIsbn( String titre,String isbn){
-       return livreRepository.findByTitreETIsbn(titre,isbn);
+    public  Livre findByIsbnn( String isbnn){
+       return livreRepository.findByIsbnn(isbnn);
 
     }
 

@@ -6,14 +6,14 @@ import java.util.Date;
 
 @Entity
 @Table(name="Livre")
-public class Livre<L> {
+public class Livre {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name="isbn", nullable = false, unique = true)
-    private String isbn;
+    @Column(name="isbnn", nullable = false)
+    private String isbnn;
 
     @Column(name="format", nullable = false, unique = false)
     private String format;
@@ -34,7 +34,7 @@ public class Livre<L> {
     private String langue;
 
     @Column(name="quantite", nullable = false)
-    private String quantite;
+    private Integer quantite;
 
     @Column(name="date_mis_en_vente", nullable = false)
     private Date dateMisEnVente;
@@ -64,14 +64,14 @@ public class Livre<L> {
     public Livre() {
     }
 
-    public Livre(Long id, String isbn, String format, String image,
+    public Livre(Long id, String isbnn, String format, String image,
                  String titre, String sousTitre, String description,
-                 String langue, String quantite, Date dateMisEnVente,
+                 String langue, Integer quantite, Date dateMisEnVente,
                  Date datePublication, String editeur, Integer nombreDePage,
                  String nomDeLaSerie, Boolean autorisationParentale, String genre,
                  String contributeurs) {
         this.id = id;
-        this.isbn = isbn;
+        this.isbnn = isbnn;
         this.format = format;
         this.image = image;
         this.titre = titre;
@@ -97,12 +97,12 @@ public class Livre<L> {
         this.id = id;
     }
 
-    public String getIsbn() {
-        return isbn;
+    public String getIsbnn() {
+        return isbnn;
     }
 
-    public void setIsbn(String ISBN) {
-        this.isbn = isbn;
+    public void setIsbnn(String isbnn) {
+        this.isbnn = isbnn;
     }
 
     public String getFormat() {
@@ -153,11 +153,11 @@ public class Livre<L> {
         this.langue = langue;
     }
 
-    public String getQuantite() {
+    public Integer getQuantite() {
         return quantite;
     }
 
-    public void setQuantite(String quantite) {
+    public void setQuantite(Integer quantite) {
         this.quantite = quantite;
     }
 
@@ -230,7 +230,7 @@ public class Livre<L> {
     public String toString() {
         return "Livre{" +
                 "id=" + id +
-                ", ISBN='" + isbn + '\'' +
+                ", ISBNN='" + isbnn + '\'' +
                 ", format='" + format + '\'' +
                 ", image='" + image + '\'' +
                 ", titre='" + titre + '\'' +

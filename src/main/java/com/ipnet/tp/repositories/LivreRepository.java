@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface LivreRepository  extends JpaRepository<Livre, Long> {
 
 
-    public Livre<Livre> findByTitreETIsbn(String titre,String isbn);
+    public Livre findByIsbnn(String titre);
 }

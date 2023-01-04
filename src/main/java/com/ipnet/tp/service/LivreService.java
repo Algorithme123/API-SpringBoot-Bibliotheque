@@ -3,6 +3,7 @@ package com.ipnet.tp.service;
 import com.ipnet.tp.models.Livre;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,13 +21,13 @@ public interface LivreService {
     void deleteParObjet(Livre livre);
 
     // Affichage de tous les livres
-    Livre<Livre> getAllLivres();
+    List<Livre> getAllLivres();
 
     //Recherche d'une occurence par la cle primaire
     Optional<Livre> findParId(Long id);
 
     //Recherche d'une occurrence au moins par un autre attribut de l'entité ;
-    Livre findParTitreOuIsbn(String titre, String isbn);
+    Livre findByIsbnn(String titre);
 
     Long countNombreDeLivre();
 }

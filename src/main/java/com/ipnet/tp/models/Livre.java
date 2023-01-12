@@ -1,7 +1,6 @@
 package com.ipnet.tp.models;
 
 import javax.persistence.*;
-import java.util.Date;
 
 
 @Entity
@@ -12,81 +11,39 @@ public class Livre {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name="isbnn", nullable = false)
-    private String isbnn;
+    @Column(name="nom", nullable = false)
+    private String nom;
 
-    @Column(name="format", nullable = false, unique = false)
-    private String format;
+    @Column(name="auteur", nullable = false, unique = false)
+    private String auteur;
 
     @Column(name="image", nullable = true)
     private String image;
 
-    @Column(name="titre",nullable = false)
-    private String titre;
+    @Column(name="categorie", nullable = true)
+    private String categorie;
 
-    @Column(name="sous_titre", nullable =false)
-    private String sousTitre;
+    @Column(name="pdf", nullable = true)
+    private String pdf;
 
-    @Column(name="description")
+    @Column(name="prix", nullable = true)
+    private Double prix;
+
+    @Column(name="description", nullable = true)
     private String description;
-
-    @Column(name="langue", nullable = false)
-    private String langue;
-
-    @Column(name="quantite", nullable = false)
-    private Integer quantite;
-
-    @Column(name="date_mis_en_vente", nullable = false)
-    private Date dateMisEnVente;
-
-    @Column(name ="date_publication", nullable = false)
-    private  Date datePublication;
-
-    @Column(name="editeur" , nullable = true)
-    private String editeur;
-
-    @Column(name="nombre_de_page", nullable = false)
-    private  Integer nombreDePage;
-
-    @Column(name="nom_de_la_serie", nullable = true)
-    private String nomDeLaSerie;
-
-    @Column(name = "autorisation_parentale")
-    private Boolean autorisationParentale;
-
-    @Column(name="genre" , nullable = false)
-    private  String genre;
-
-    @Column(name = "contributeurs", nullable = true)
-    private String contributeurs;
-
 
     public Livre() {
     }
 
-    public Livre(Long id, String isbnn, String format, String image,
-                 String titre, String sousTitre, String description,
-                 String langue, Integer quantite, Date dateMisEnVente,
-                 Date datePublication, String editeur, Integer nombreDePage,
-                 String nomDeLaSerie, Boolean autorisationParentale, String genre,
-                 String contributeurs) {
+    public Livre(Long id, String nom, String auteur, String image, String categorie, String pdf, Double prix, String description) {
         this.id = id;
-        this.isbnn = isbnn;
-        this.format = format;
+        this.nom = nom;
+        this.auteur = auteur;
         this.image = image;
-        this.titre = titre;
-        this.sousTitre = sousTitre;
+        this.categorie = categorie;
+        this.pdf = pdf;
+        this.prix = prix;
         this.description = description;
-        this.langue = langue;
-        this.quantite = quantite;
-        this.dateMisEnVente = dateMisEnVente;
-        this.datePublication = datePublication;
-        this.editeur = editeur;
-        this.nombreDePage = nombreDePage;
-        this.nomDeLaSerie = nomDeLaSerie;
-        this.autorisationParentale = autorisationParentale;
-        this.genre = genre;
-        this.contributeurs = contributeurs;
     }
 
     public Long getId() {
@@ -97,20 +54,20 @@ public class Livre {
         this.id = id;
     }
 
-    public String getIsbnn() {
-        return isbnn;
+    public String getNom() {
+        return nom;
     }
 
-    public void setIsbnn(String isbnn) {
-        this.isbnn = isbnn;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public String getFormat() {
-        return format;
+    public String getAuteur() {
+        return auteur;
     }
 
-    public void setFormat(String format) {
-        this.format = format;
+    public void setAuteur(String auteur) {
+        this.auteur = auteur;
     }
 
     public String getImage() {
@@ -121,20 +78,28 @@ public class Livre {
         this.image = image;
     }
 
-    public String getTitre() {
-        return titre;
+    public String getCategorie() {
+        return categorie;
     }
 
-    public void setTitre(String titre) {
-        this.titre = titre;
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
     }
 
-    public String getSousTitre() {
-        return sousTitre;
+    public String getPdf() {
+        return pdf;
     }
 
-    public void setSousTitre(String sousTitre) {
-        this.sousTitre = sousTitre;
+    public void setPdf(String pdf) {
+        this.pdf = pdf;
+    }
+
+    public Double getPrix() {
+        return prix;
+    }
+
+    public void setPrix(Double prix) {
+        this.prix = prix;
     }
 
     public String getDescription() {
@@ -143,109 +108,5 @@ public class Livre {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getLangue() {
-        return langue;
-    }
-
-    public void setLangue(String langue) {
-        this.langue = langue;
-    }
-
-    public Integer getQuantite() {
-        return quantite;
-    }
-
-    public void setQuantite(Integer quantite) {
-        this.quantite = quantite;
-    }
-
-    public Date getDateMisEnVente() {
-        return dateMisEnVente;
-    }
-
-    public void setDateMisEnVente(Date dateMisEnVente) {
-        this.dateMisEnVente = dateMisEnVente;
-    }
-
-    public Date getDatePublication() {
-        return datePublication;
-    }
-
-    public void setDatePublication(Date datePublication) {
-        this.datePublication = datePublication;
-    }
-
-    public String getEditeur() {
-        return editeur;
-    }
-
-    public void setEditeur(String editeur) {
-        this.editeur = editeur;
-    }
-
-    public Integer getNombreDePage() {
-        return nombreDePage;
-    }
-
-    public void setNombreDePage(Integer nombreDePage) {
-        this.nombreDePage = nombreDePage;
-    }
-
-    public String getNomDeLaSerie() {
-        return nomDeLaSerie;
-    }
-
-    public void setNomDeLaSerie(String nomDeLaSerie) {
-        this.nomDeLaSerie = nomDeLaSerie;
-    }
-
-    public Boolean getAutorisationParentale() {
-        return autorisationParentale;
-    }
-
-    public void setAutorisationParentale(Boolean autorisationParentale) {
-        this.autorisationParentale = autorisationParentale;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getContributeurs() {
-        return contributeurs;
-    }
-
-    public void setContributeurs(String contributeurs) {
-        this.contributeurs = contributeurs;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Livre{" +
-                "id=" + id +
-                ", ISBNN='" + isbnn + '\'' +
-                ", format='" + format + '\'' +
-                ", image='" + image + '\'' +
-                ", titre='" + titre + '\'' +
-                ", sousTitre='" + sousTitre + '\'' +
-                ", description='" + description + '\'' +
-                ", langue='" + langue + '\'' +
-                ", quantite='" + quantite + '\'' +
-                ", dateMisEnVente=" + dateMisEnVente +
-                ", datePublication=" + datePublication +
-                ", editeur='" + editeur + '\'' +
-                ", nombreDePage=" + nombreDePage +
-                ", nomDeLaSerie='" + nomDeLaSerie + '\'' +
-                ", autorisationParentale=" + autorisationParentale +
-                ", genre='" + genre + '\'' +
-                ", contributeurs='" + contributeurs + '\'' +
-                '}';
     }
 }

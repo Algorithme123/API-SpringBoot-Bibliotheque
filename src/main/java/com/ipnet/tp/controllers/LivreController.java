@@ -11,27 +11,30 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("")
+@CrossOrigin(origins = "*")
+
 public class LivreController {
 
     @Autowired
     private LivreService livreService;
 
-    @PostMapping("/livre")
+    @PostMapping("/livre/add")
     public Livre save(@RequestBody Livre livre){
+
         return livreService.save(livre);
     }
 
-    @GetMapping("/livre/{id}")
+    @GetMapping("/livre/one/{id}")
     public Optional<Livre> getById(@PathVariable(value = "id") Long id){
         return livreService.find(id);
     }
 
-    @GetMapping("/livre")
+    @GetMapping("/allLivre")
     public List<Livre> getAll(){
         return livreService.findAll();
     }
 
-    @DeleteMapping("/livre/{id}")
+    @DeleteMapping("/livre/{id}/delete")
     public void deleteById(@PathVariable(value = "id") Long id){
         livreService.delete(id);
     }

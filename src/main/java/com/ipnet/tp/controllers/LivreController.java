@@ -1,9 +1,11 @@
 package com.ipnet.tp.controllers;
 
 import com.ipnet.tp.models.Livre;
+import com.ipnet.tp.repositories.LivreRepository;
 import com.ipnet.tp.service.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +19,9 @@ public class LivreController {
 
     @Autowired
     private LivreService livreService;
+
+    @Autowired
+    private LivreRepository livreRepository;
 
     @PostMapping("/livre/add")
     public Livre save(@RequestBody Livre livre){
@@ -47,5 +52,10 @@ public class LivreController {
     @GetMapping("/livre/count")
     public long count(){
         return livreService.count();
+    }
+
+    @GetMapping("/livre/nom")
+    public ResponseEntity<List<Livre>> getlivreByNom(@RequestParam String nom) {
+        return new ResponseEntity<List<Livre>>(livreRepository.findByNom(nom), HttpStatus.OK);
     }
 }

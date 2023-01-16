@@ -19,7 +19,6 @@ public class LivreServiceImpl implements LivreService {
 
     @Override
     public Livre save(Livre livre) {
-
         return livreRepository.save(livre);
     }
 
